@@ -14,21 +14,30 @@
 using namespace std;
 
 int main() {
-    setlocale(LC_ALL, "portuguese");
-    int idade, cont = 0;
-    string nome[300];
+    
+    int idade[300], cont = 0, soma=0 ;
+    string nome;
     string nr[300];
+    
      cout<<"Programa para entrada de 300 nomes e 300 idades sendo exibido os maiores de 21 anos.\n";
     
     for (int i = 0; i < 300; i++) {
         cout << "\nDigite o seu " << i + 1 <<"º nome:\n";
-        cin >> nome[i];
+        cin >> nome;
         cout<<"\nDigite a  "<<i + 1<<"º idade:\n";
-        cin >> idade;
-        if (idade >= 21) {
-            nr[cont++] = nome[i];
+        cin >> idade[i];
+        
+        soma = soma+idade[i];
+        
+        if (idade[i] >= 21) {
+            nr[cont++] = nome;
         }
     }
+    
+    
+    cout<<"A soma das idades das pessoas é;\n"<<soma<<"\n";
+    
+    
     
     cout << "número de pessoas maior de 21 anos são: " << cont << "\n";
     
